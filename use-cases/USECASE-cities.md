@@ -7,7 +7,7 @@
 As an employee I want to produce a report of cities so I can find out the statistics of the populations.
 ### Scope
 
-Company.
+Organisation
 
 ### Level
 

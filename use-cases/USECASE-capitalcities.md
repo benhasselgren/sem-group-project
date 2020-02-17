@@ -1,4 +1,4 @@
-# USE CASE: Produce a report of population statistics in capital cities
+# USE CASE 1: Produce a report of population statistics in capital cities
 
 ## CHARACTERISTIC INFORMATION
 

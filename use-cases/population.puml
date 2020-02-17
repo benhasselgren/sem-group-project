@@ -3,6 +3,7 @@
 'default
 left to right direction
 actor Employee
+rectangle Database
 
 rectangle "HR System" {
 
@@ -13,6 +14,7 @@ rectangle "HR System" {
 
 
     Employee --> UC4
+    UC4 --> Database
     Employee --> UC5
     Employee --> UC6
     Employee --> UC7

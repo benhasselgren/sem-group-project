@@ -5,19 +5,25 @@ left to right direction
 actor Employee
 rectangle Database
 
-rectangle "HR System" {
+rectangle "Population Statistics System" {
 
-    usecase UC4 as "produce a report of populations of capital cities so I can find out the statistics of the populations"
-    usecase UC5 as "produce a report of populations in continents, regions and countries"
-    usecase UC6 as "produce a report of languages in countries to see what is the most spoken and least"
-    usecase UC7 as "produce a report of cities so I can find out the statistics of the populations"
+    usecase UC1 as "produce a report of capital cities so I can find out the statistics of the populations."
+    usecase UC2 as "produce a report of cities so I can find out the statistics of the populations."
+    usecase UC3 as "produce a report of countries so I can find out the statistics of the populations."
+    usecase UC4 as "produce a report of languages spoken so I can find out the statistics of the world population that speaks foreign languages."
+    usecase UC5 as "produce a report of continents, regions and countries so I can find out the statistics of the populations."
 
 
+    Employee --> UC1
+    UC1 -- Database
+    Employee --> UC2
+    UC2 -- Database
+    Employee --> UC3
+    UC3 -- Database
     Employee --> UC4
-    UC4 --> Database
+    UC4 -- Database
     Employee --> UC5
-    Employee --> UC6
-    Employee --> UC7
+    UC5 -- Database
 
 }
 @enduml

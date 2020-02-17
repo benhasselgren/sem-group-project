@@ -31,7 +31,7 @@ Employee
 
 ### Trigger
 
-A request for statistics of population in cities is sent to the employee
+A request for statistics of populations on cities is sent to the employee
 
 ## MAIN SUCCESS SCENARIO
 

@@ -1,5 +1,8 @@
 package com.napier.sem.classes;
 
+/** Represents a country.
+ * @author SEM Group Project
+ */
 public class Country {
     /**
      * Instance variables.

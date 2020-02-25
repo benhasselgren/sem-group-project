@@ -1,5 +1,8 @@
 package com.napier.sem.classes;
 
+/** Represents a city.
+ * @author SEM Group Project
+ */
 public class City {
     /**
      * Instance variables.

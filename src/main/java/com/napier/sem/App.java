@@ -21,8 +21,11 @@ public class App {
         // Connect to database
         a.connect();
 
-        // Display results
+        // Get country result
+        Country country = a.getCountry("Argentina");
 
+        //Display country
+        a.displayCountry(country);
 
         // Disconnect from database
         a.disconnect();
@@ -99,9 +102,11 @@ public class App {
         {
             System.out.println(country.toString());
         }
-        System.out.println("No employee");
-        return;
-
+        else
+        {
+            System.out.println("No employee");
+            return;
+        }
     }
 
     /**
@@ -116,7 +121,7 @@ public class App {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT country.Code, country.Name, country.Contintent, country.Region, country.SurfaceArea, country.IndepYear, country.Population, country.LifeExpectancy, country.GNP, country.GNPOLd, country.LocalName, country.GovernmentForm, country.HeadOfState, country.Capital "
+                    "SELECT country.Code, country.Name, country.Continent, country.Region, country.SurfaceArea, country.IndepYear, country.Population, country.LifeExpectancy, country.GNP, country.GNPOLd, country.LocalName, country.GovernmentForm, country.HeadOfState, country.Capital "
                             + "FROM country "
                             + "WHERE country.Name = '" + country_name + "' ";
             // Execute SQL statement
@@ -127,7 +132,7 @@ public class App {
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
                 country.setName(rset.getString("country.Name"));
-                country.setContinent(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
                 country.setRegion(rset.getString("country.Region"));
                 country.setSurfaceArea(rset.getInt("country.SurfaceArea"));
                 country.setIndepYear(rset.getInt("country.IndepYear"));

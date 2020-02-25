@@ -19,7 +19,7 @@ public class Country {
     private double gnpold;
     private String localName;
     private String governmentForm;
-    private String HeadOfState;
+    private String headOfState;
     private City capitalCity;
 
     /**
@@ -122,11 +122,11 @@ public class Country {
     }
 
     public String getHeadOfState() {
-        return HeadOfState;
+        return headOfState;
     }
 
     public void setHeadOfState(String headOfState) {
-        HeadOfState = headOfState;
+        this.headOfState = headOfState;
     }
 
     public City getCapitalCity() {
@@ -142,4 +142,30 @@ public class Country {
      */
     public Country()
     {}
+
+    // ------------------------------------- Methods -------------------------------------
+
+    /**
+     * Creates a string from country.
+     * @return A string
+     */
+    @Override
+    public String toString() {
+        return "Country{" +
+                "code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", continent='" + continent + '\'' +
+                ", region='" + region + '\'' +
+                ", surfaceArea=" + surfaceArea +
+                ", indepYear=" + indepYear +
+                ", population=" + population +
+                ", lifeExpectancy=" + lifeExpectancy +
+                ", gnp=" + gnp +
+                ", gnpold=" + gnpold +
+                ", localName='" + localName + '\'' +
+                ", governmentForm='" + governmentForm + '\'' +
+                ", headOfState='" + headOfState + '\'' +
+                ", capitalCity=" + capitalCity +
+                '}';
+    }
 }

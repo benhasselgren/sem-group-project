@@ -1,4 +1,5 @@
 package com.napier.sem;
+import com.napier.sem.classes.City;
 import com.napier.sem.classes.Country;
 
 import java.sql.*;
@@ -19,7 +20,9 @@ public class App {
 
         // Connect to database
         a.connect();
+
         // Display results
+
 
         // Disconnect from database
         a.disconnect();
@@ -86,6 +89,22 @@ public class App {
     }
 
     /**
+     * Prints a country.
+     * @param country The country to print
+     */
+    public void displayCountry(Country country)
+    {
+        // Check employees is not null
+        if (country != null)
+        {
+            System.out.println(country.toString());
+        }
+        System.out.println("No employee");
+        return;
+
+    }
+
+    /**
      * Returns a country.
      * @param country_name The name of the country to return.
      * @return A country
@@ -97,7 +116,7 @@ public class App {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT country.Code, country.Name, country.Contintent, country.Region, country.SurfaceArea, country.IndepYear, country.Population, country.LifeExpectancy, country.GNP, country.GNPOLd, country.LocalName, country.GovernmentForm, country.HeadOfState, country.Capital  "
+                    "SELECT country.Code, country.Name, country.Contintent, country.Region, country.SurfaceArea, country.IndepYear, country.Population, country.LifeExpectancy, country.GNP, country.GNPOLd, country.LocalName, country.GovernmentForm, country.HeadOfState, country.Capital "
                             + "FROM country "
                             + "WHERE country.Name = '" + country_name + "' ";
             // Execute SQL statement
@@ -119,9 +138,10 @@ public class App {
                 country.setLocalName(rset.getString("country.LocalName"));
                 country.setGovernmentForm(rset.getString("country.GovernmentForm"));
                 country.setHeadOfState(rset.getString("country.HeadOfState"));
-                country.setCapitalCity(null);
+                //Get the city by calling getCity() and passing the city id.
+                country.setCapitalCity(getCity(rset.getInt("country.Capital")));
 
-                //return the department
+                //return the country
                 return country;
             }
             else
@@ -133,6 +153,51 @@ public class App {
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get country details");
+            return null;
+        }
+    }
+
+    /**
+     * Returns a country.
+     * @param city_id The id of the city to return.
+     * @return A city
+     */
+    public City getCity(int city_id) {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT city.ID, city.Name, city.CountryCode, city.District, city.Population "
+                            + "FROM city "
+                            + "WHERE city.ID = " + city_id + " ";
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            if (rset.next()) {
+                // Extract city information
+                City city = new City();
+                city.setId(rset.getInt("city.ID"));
+                city.setName(rset.getString("city.Name"));
+                //Country will be set in getCountry
+                city.setCountry(null);
+                city.setDistrict(rset.getString("city.District"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                //return the city
+                return city;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get city details");
             return null;
         }
     }

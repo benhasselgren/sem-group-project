@@ -165,7 +165,7 @@ public class Country {
                 ", localName='" + localName + '\'' +
                 ", governmentForm='" + governmentForm + '\'' +
                 ", headOfState='" + headOfState + '\'' +
-                ", capitalCity=" + capitalCity.getName() +
+                ", capitalCity='" + capitalCity.getName() + '\'' +
                 '}';
     }
 }

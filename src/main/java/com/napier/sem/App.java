@@ -4,6 +4,9 @@ import com.napier.sem.classes.Country;
 
 import java.sql.*;
 
+/** Main app class.
+ * @author SEM Group Project
+ */
 public class App {
     /**
      * Instance variables.

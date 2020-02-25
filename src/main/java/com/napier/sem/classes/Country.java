@@ -135,9 +135,31 @@ public class Country {
 
     /**
      * Constructor.
+     * Returns an empty object
      */
     public Country()
     {}
+
+    /**
+     * Constructor.
+     * Returns an object with every field assigned to apart from city
+     */
+    public Country(String code, String name, String continent, String region, double surfaceArea, int indepYear, int population, double lifeExpectancy, double gnp, double gnpold, String localName, String governmentForm, String headOfState, City capitalCity) {
+        this.code = code;
+        this.name = name;
+        this.continent = continent;
+        this.region = region;
+        this.surfaceArea = surfaceArea;
+        this.indepYear = indepYear;
+        this.population = population;
+        this.lifeExpectancy = lifeExpectancy;
+        this.gnp = gnp;
+        this.gnpold = gnpold;
+        this.localName = localName;
+        this.governmentForm = governmentForm;
+        this.headOfState = headOfState;
+        this.capitalCity = capitalCity;
+    }
 
     // ------------------------------------- Methods -------------------------------------
 

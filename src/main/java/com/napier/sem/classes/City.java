@@ -54,9 +54,21 @@ public class City {
 
     /**
      * Constructor.
+     * returns an empty object
      */
     public City()
     {}
+
+    /**
+     * Constructor.
+     * returns a city object with every field assigned to apart from country
+     */
+    public City(int id, String name, String district, int population) {
+        this.id = id;
+        this.name = name;
+        this.district = district;
+        this.population = population;
+    }
 
     // ------------------------------------- Methods -------------------------------------
 

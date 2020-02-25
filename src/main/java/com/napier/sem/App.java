@@ -3,9 +3,25 @@ import java.sql.*;
 
 public class App {
     /**
-     * Connection to MySQL database.
+     * Instance variables.
      */
     private Connection con = null;
+
+    /**
+     * Main method.
+     */
+    public static void main(String[] args)
+    {
+        // Create new Application
+        App a = new App();
+
+        // Connect to database
+        a.connect();
+        // Display results
+
+        // Disconnect from database
+        a.disconnect();
+    }
 
     /**
      * Connect to the MySQL database.
@@ -65,18 +81,5 @@ public class App {
                 System.out.println("Error closing connection to database");
             }
         }
-    }
-
-    public static void main(String[] args)
-    {
-        // Create new Application
-        App a = new App();
-
-        // Connect to database
-        a.connect();
-        // Display results
-
-        // Disconnect from database
-        a.disconnect();
     }
 }

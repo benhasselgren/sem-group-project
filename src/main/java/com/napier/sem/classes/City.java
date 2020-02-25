@@ -6,7 +6,7 @@ public class City {
      */
     private int id;
     private String name;
-    private String countryCode;
+    private Country country;
     private String district;
     private int population;
 

@@ -1,4 +1,6 @@
 package com.napier.sem;
+import com.napier.sem.classes.Country;
+
 import java.sql.*;
 
 public class App {
@@ -80,6 +82,50 @@ public class App {
             {
                 System.out.println("Error closing connection to database");
             }
+        }
+    }
+
+    /**
+     * Returns a country.
+     * @param country_name The name of the country to return.
+     * @return A country
+     */
+    public Country getCountry(String country_name) {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT departments.dept_no, departments.dept_name, dept_manager.emp_no "
+                            + "FROM departments, dept_manager "
+                            + "WHERE departments.dept_no = dept_manager.dept_no "
+                            + "AND dept_manager.to_date = '9999-01-01' "
+                            + "AND departments.dept_name = '" + dept_name + "' ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            if (rset.next()) {
+                // Extract department information
+                Country country = new Country();
+                dept.dept_no = rset.getString("departments.dept_no");
+                dept.dept_name = rset.getString("departments.dept_name");
+                //Manager will be set in the getEmployee() method
+                dept.manager = getEmployee(rset.getInt("dept_manager.emp_no"), true, dept);
+
+                //return the department
+                return country;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
         }
     }
 }

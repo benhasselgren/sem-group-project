@@ -20,8 +20,7 @@ public class Country {
     private String localName;
     private String governmentForm;
     private String HeadOfState;
-    private int capital;
-    private String code2;
+    private City capitalCity;
 
     /**
      * Getters and setters.
@@ -130,20 +129,12 @@ public class Country {
         HeadOfState = headOfState;
     }
 
-    public int getCapital() {
-        return capital;
+    public City getCapitalCity() {
+        return capitalCity;
     }
 
-    public void setCapital(int capital) {
-        this.capital = capital;
-    }
-
-    public String getCode2() {
-        return code2;
-    }
-
-    public void setCode2(String code2) {
-        this.code2 = code2;
+    public void setCapitalCity(City capitalCity) {
+        this.capitalCity = capitalCity;
     }
 
     /**

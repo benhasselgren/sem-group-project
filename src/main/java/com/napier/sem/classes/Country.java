@@ -4,9 +4,7 @@ package com.napier.sem.classes;
  * @author SEM Group Project
  */
 public class Country {
-    /**
-     * Instance variables.
-     */
+    // ------------------------------------- Instance variables -------------------------------------
     private String code;
     private String name;
     private String continent;
@@ -22,9 +20,7 @@ public class Country {
     private String headOfState;
     private City capitalCity;
 
-    /**
-     * Getters and setters.
-     */
+    // ------------------------------------- Getters/Setters -------------------------------------
     public String getCode() {
         return code;
     }

@@ -4,17 +4,14 @@ package com.napier.sem.classes;
  * @author SEM Group Project
  */
 public class CountryLanguage {
-    /**
-     * Instance variables.
-     */
+    // ------------------------------------- Instance variables -------------------------------------
     private Country country;
     private String language;
     private boolean isOfficial;
     private double percentage;
 
-    /**
-     * Getters and setters.
-     */
+    // ------------------------------------- Getters/Setters -------------------------------------
+
     public Country getCountry() {
         return country;
     }
@@ -52,4 +49,7 @@ public class CountryLanguage {
      */
     public CountryLanguage()
     {}
+
+    // ------------------------------------- Methods -------------------------------------
+
 }

@@ -4,18 +4,14 @@ package com.napier.sem.classes;
  * @author SEM Group Project
  */
 public class City {
-    /**
-     * Instance variables.
-     */
+    // ------------------------------------- Instance variables -------------------------------------
     private int id;
     private String name;
     private Country country;
     private String district;
     private int population;
 
-    /**
-     * Getters and setters.
-     */
+    // ------------------------------------- Getters/Setters -------------------------------------
     public int getId() {
         return id;
     }
@@ -61,4 +57,7 @@ public class City {
      */
     public City()
     {}
+
+    // ------------------------------------- Methods -------------------------------------
+
 }

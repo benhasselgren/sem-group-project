@@ -97,21 +97,29 @@ public class App {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT departments.dept_no, departments.dept_name, dept_manager.emp_no "
-                            + "FROM departments, dept_manager "
-                            + "WHERE departments.dept_no = dept_manager.dept_no "
-                            + "AND dept_manager.to_date = '9999-01-01' "
-                            + "AND departments.dept_name = '" + dept_name + "' ";
+                    "SELECT country.Code, country.Name, country.Contintent, country.Region, country.SurfaceArea, country.IndepYear, country.Population, country.LifeExpectancy, country.GNP, country.GNPOLd, country.LocalName, country.GovernmentForm, country.HeadOfState, country.Capital  "
+                            + "FROM country "
+                            + "WHERE country.Name = '" + country_name + "' ";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             if (rset.next()) {
-                // Extract department information
+                // Extract country information
                 Country country = new Country();
-                dept.dept_no = rset.getString("departments.dept_no");
-                dept.dept_name = rset.getString("departments.dept_name");
-                //Manager will be set in the getEmployee() method
-                dept.manager = getEmployee(rset.getInt("dept_manager.emp_no"), true, dept);
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Name"));
+                country.setRegion(rset.getString("country.Region"));
+                country.setSurfaceArea(rset.getInt("country.SurfaceArea"));
+                country.setIndepYear(rset.getInt("country.IndepYear"));
+                country.setPopulation(rset.getInt("country.Population"));
+                country.setLifeExpectancy(rset.getDouble("country.LifeExpectancy"));
+                country.setGnp(rset.getDouble("country.GNP"));
+                country.setGnpold(rset.getDouble("country.GNPOLd"));
+                country.setLocalName(rset.getString("country.LocalName"));
+                country.setGovernmentForm(rset.getString("country.GovernmentForm"));
+                country.setHeadOfState(rset.getString("country.HeadOfState"));
+                country.setCapitalCity(null);
 
                 //return the department
                 return country;

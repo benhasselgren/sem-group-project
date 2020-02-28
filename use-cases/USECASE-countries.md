@@ -50,7 +50,16 @@ A request for statistics of populations in countries is sent to the employee
 
 ## SUB-VARIATIONS
 
-None.
+A country report requires the following columns:
+
+- Code
+- Name
+- Continent
+- Region
+- Population
+- Capital
+
+
 
 ## SCHEDULE
 

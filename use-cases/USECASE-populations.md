@@ -1,4 +1,4 @@
-# USE CASE: Produce a report of population statistics in continents, regions and countries
+# USE CASE 5: Produce a report of population statistics in continents, regions and countries
 
 ## CHARACTERISTIC INFORMATION
 

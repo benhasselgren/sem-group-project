@@ -1,4 +1,4 @@
-# USE CASE: Produce a report of population statistics in countries
+# USE CASE 3: Produce a report of population statistics in countries
 
 ## CHARACTERISTIC INFORMATION
 

@@ -1,4 +1,4 @@
-# USE CASE: Produce a report of population statistics in the world who speak different languages
+# USE CASE 4: Produce a report of population statistics in the world who speak different languages
 
 ## CHARACTERISTIC INFORMATION
 

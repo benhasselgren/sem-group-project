@@ -50,10 +50,10 @@ A request for statistics of populations on cities is sent to the employee
 
 A city report requires the following columns:
 
-- Name.
-- Country.
-- District.
-- Population.
+- Name
+- Country
+- District
+- Population
 
 ## SCHEDULE
 

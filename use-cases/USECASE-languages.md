@@ -48,7 +48,13 @@ A request for statistics of population in the world who speak different lanagues
 
 ## SUB-VARIATIONS
 
-None.
+The organisation has asked if it is possible to provide the number of people who speak the following languages from greatest number to smallest, including the percentage of the world population:
+
+- Chinese.
+- English.
+- Hindi.
+- Spanish.
+- Arabic.
 
 ## SCHEDULE
 

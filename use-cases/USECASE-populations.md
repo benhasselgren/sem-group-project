@@ -49,7 +49,7 @@ from the database.
 
 ## SUB-VARIATIONS
 
-For the population reports, the following information is requested:
+For the population report, the following information is requested:
 
 - The name of the continent/region/country.
 - The total population of the continent/region/country.

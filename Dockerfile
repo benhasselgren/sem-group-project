@@ -1,4 +1,4 @@
 FROM openjdk:latest
-COPY ./target/semGroupProject-0.1.0.3-jar-with-dependencies.jar /tmp
+COPY ./target/semGroupProject.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "-jar", "semGroupProject-0.1.0.3-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "semGroupProject.jar", "db:3306"]

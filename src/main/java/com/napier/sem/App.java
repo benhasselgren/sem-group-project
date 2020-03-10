@@ -22,7 +22,7 @@ public class App {
         App a = new App();
 
         // Connect to database
-        a.connect();
+        a.connect("localhost:33060");
 
         // Get country result
         Country country = a.getCountry("Argentina");

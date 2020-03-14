@@ -45,11 +45,13 @@ public class AppIntegrationTest
     }
 
     // ------------------------------------- Test getAllCountriesInTheWorld() -------------------------------------
+
     @Test
     void testGetAllCountriesInTheWorld()
     {
         ArrayList<Country> countries = app.getAllCountriesInTheWorld();
 
-        assertEquals();
+        //Check to see that the number of rows in query is correct
+        assertEquals(239, countries.size());
     }
 }

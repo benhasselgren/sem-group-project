@@ -110,14 +110,14 @@ public class App {
     public void displayCountry(Country country)
     {
         // Check employees is not null
-        if (country != null)
+        if (country == null)
         {
-            System.out.println(country.toString());
+            System.out.println("No country");
+            return;
         }
         else
         {
-            System.out.println("No employee");
-            return;
+            System.out.println(country.toString());
         }
     }
 
@@ -131,6 +131,7 @@ public class App {
         {
             //If no countries then return appropriate error message
             System.out.println("No countries found.");
+            return;
         }
         else
         {

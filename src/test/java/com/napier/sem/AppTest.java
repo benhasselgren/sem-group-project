@@ -58,6 +58,25 @@ public class AppTest
     }
 
     @Test
+    void displayCountryReportTestEmpty()
+    {
+        ArrayList<Country> countries = new ArrayList<Country>();
+
+        app.displayCountryReport(countries);
+    }
+
+    @Test
+    void displayCountryReportTestEmptyCountry()
+    {
+        ArrayList<Country> countries = new ArrayList<Country>();
+
+        //Add a null country
+        countries.add(null);
+
+        app.displayCountryReport(countries);
+    }
+
+    @Test
     void displayCountryReport()
     {
         ArrayList<Country> countries = new ArrayList<Country>();

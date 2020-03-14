@@ -55,7 +55,16 @@ public class AppIntegrationTest
         assertEquals(239, countries.size());
     }
 
-    // ------------------------------------- Test getAllCountriesInTheWorld() -------------------------------------
+    @Test
+    void testGetAllCountriesInTheWorldLimit()
+    {
+        ArrayList<Country> countries = app.getAllCountriesInTheWorld(10);
+
+        //Check to see that the number of rows in query is correct
+        assertEquals(10, countries.size());
+    }
+
+    // ------------------------------------- Test getAllCountriesInContinent() -------------------------------------
 
     @Test
     void testGetAllCountriesInContinentWrongContinent()
@@ -77,5 +86,25 @@ public class AppIntegrationTest
         assertEquals(46, countries.size());
     }
 
+    // ------------------------------------- Test getAllCountriesInRegion() -------------------------------------
 
+    @Test
+    void testGetAllCountriesInRegionWrongRegion()
+    {
+        //Get list of countries in europe
+        ArrayList<Country> countries = app.getAllCountriesInContinent("E");
+
+        //Check to see that the number of rows in query is correct
+        assertEquals(0, countries.size());
+    }
+
+    @Test
+    void testGetAllCountriesInRegion()
+    {
+        //Get list of countries in Nordic Countries region
+        ArrayList<Country> countries = app.getAllCountriesInContinent("Nordic Countries");
+
+        //Check to see that the number of rows in query is correct
+        assertEquals(7, countries.size());
+    }
 }

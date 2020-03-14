@@ -210,7 +210,7 @@ public class App {
      * getAllCountriesInTheWorld.
      * @return A list of all the countries in the world in descending order
      */
-    public Country getAllCountriesInTheWorld() {
+    public ArrayList<Country> getAllCountriesInTheWorld() {
         try
         {
             // Create an SQL statement
@@ -220,10 +220,14 @@ public class App {
                     "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, country.Capital "
                             + "FROM country "
                             + "ORDER BY country.population DESC ";
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
-            if (rset.next()) {
+            ArrayList<Country> countries = new ArrayList<Country>();
+
+            while(rset.next())
+            {
                 // Extract country information
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
@@ -234,13 +238,11 @@ public class App {
                 //Get the city by calling getCity() and passing the city id.
                 country.setCapitalCity(getCity(rset.getInt("country.Capital")));
 
-                //return the country
-                return country;
+                //Add country to list
+                countries.add(country);
             }
-            else
-            {
-                return null;
-            }
+            //return the countries
+            return countries;
         }
         catch (Exception e)
         {

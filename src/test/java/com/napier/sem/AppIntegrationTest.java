@@ -43,4 +43,13 @@ public class AppIntegrationTest
         assertEquals(country.getHeadOfState(), "Fernando de la Rúa");
         assertEquals(country.getCapitalCity().getId(), 69);
     }
+
+    // ------------------------------------- Test getAllCountriesInTheWorld() -------------------------------------
+    @Test
+    void testGetAllCountriesInTheWorld()
+    {
+        ArrayList<Country> countries = app.getAllCountriesInTheWorld();
+
+        assertEquals();
+    }
 }

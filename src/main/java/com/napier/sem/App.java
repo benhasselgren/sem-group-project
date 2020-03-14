@@ -112,7 +112,7 @@ public class App {
         // Check employees is not null
         if (country == null)
         {
-            System.out.println("No country");
+            System.out.println("No country.");
             return;
         }
         else
@@ -138,6 +138,11 @@ public class App {
             //Loops through every country
             for(Country country : countries)
             {
+                //If country is equal to null then skip to next country in list
+                if(country == null)
+                {
+                    continue;
+                }
                 //Print the country report to console
                 System.out.println(country.toCountryReportString());
             }

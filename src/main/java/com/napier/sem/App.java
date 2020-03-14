@@ -3,6 +3,7 @@ import com.napier.sem.classes.City;
 import com.napier.sem.classes.Country;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /** Main app class.
  * @author SEM Group Project
@@ -118,6 +119,15 @@ public class App {
             System.out.println("No employee");
             return;
         }
+    }
+
+    /**
+     * Prints a country report.
+     * @param countries The list of countries to print
+     */
+    public void displayCountryReport(ArrayList<Country> countries)
+    {
+
     }
 
     /**

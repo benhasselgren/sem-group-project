@@ -48,4 +48,12 @@ public class AppTest
         app.displayCountry(country);
     }
 
+    // ------------------------------------- Test displayCountryReport() -------------------------------------
+
+    @Test
+    void displayCountryReportTestNull()
+    {
+        app.displayCountryReport(null);
+    }
+
 }

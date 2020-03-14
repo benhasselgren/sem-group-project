@@ -54,4 +54,16 @@ public class AppIntegrationTest
         //Check to see that the number of rows in query is correct
         assertEquals(239, countries.size());
     }
+
+    // ------------------------------------- Test getAllCountriesInTheWorld() -------------------------------------
+
+    @Test
+    void testGetAllCountriesInContinent()
+    {
+        //Get list of countries in europe
+        ArrayList<Country> countries = app.getAllCountriesInContinent("Europe");
+
+        //Check to see that the number of rows in query is correct
+        assertEquals(46, countries.size());
+    }
 }

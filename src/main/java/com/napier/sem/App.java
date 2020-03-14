@@ -127,11 +127,19 @@ public class App {
      */
     public void displayCountryReport(ArrayList<Country> countries)
     {
-        //Loops through every country
-        for(Country country : countries)
+        if(countries == null)
         {
-            //Print the country report to console
-            System.out.println(country.toCountryReportString());
+            //If no countries then return appropriate error message
+            System.out.println("No countries found.");
+        }
+        else
+        {
+            //Loops through every country
+            for(Country country : countries)
+            {
+                //Print the country report to console
+                System.out.println(country.toCountryReportString());
+            }
         }
     }
 

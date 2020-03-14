@@ -154,7 +154,7 @@ public class App {
 
     //------------------------------------- Country queries -------------------------------------
     /**
-     * Returns a country.
+     * getCountry.
      * @param country_name The name of the country to return.
      * @return A country
      */
@@ -187,6 +187,50 @@ public class App {
                 country.setLocalName(rset.getString("country.LocalName"));
                 country.setGovernmentForm(rset.getString("country.GovernmentForm"));
                 country.setHeadOfState(rset.getString("country.HeadOfState"));
+                //Get the city by calling getCity() and passing the city id.
+                country.setCapitalCity(getCity(rset.getInt("country.Capital")));
+
+                //return the country
+                return country;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+    }
+
+    /**
+     * getAllCountriesInTheWorld.
+     * @return A list of all the countries in the world in descending order
+     */
+    public Country getAllCountriesInTheWorld() {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, country.Capital "
+                            + "FROM country "
+                            + "ORDER BY country.population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            if (rset.next()) {
+                // Extract country information
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                country.setPopulation(rset.getInt("country.Population"));
                 //Get the city by calling getCity() and passing the city id.
                 country.setCapitalCity(getCity(rset.getInt("country.Capital")));
 

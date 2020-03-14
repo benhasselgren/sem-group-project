@@ -42,6 +42,8 @@ public class App {
         a.disconnect();
     }
 
+    // ########################------------------------------------- METHODS -------------------------------------########################
+
     /**
      * Connect to the MySQL database.
      */
@@ -103,6 +105,7 @@ public class App {
         }
     }
 
+    //------------------------------------- Display methods -------------------------------------
     /**
      * Prints a country.
      * @param country The country to print
@@ -149,6 +152,7 @@ public class App {
         }
     }
 
+    //------------------------------------- Country queries -------------------------------------
     /**
      * Returns a country.
      * @param country_name The name of the country to return.
@@ -202,8 +206,9 @@ public class App {
         }
     }
 
+    //------------------------------------- City queries -------------------------------------
     /**
-     * Returns a country.
+     * Returns a city.
      * @param city_id The id of the city to return.
      * @return A city
      */

@@ -300,6 +300,54 @@ public class App {
         }
     }
 
+    /**
+     * getAllCountriesInRegion.
+     * @param region The region in which the countries are chosen
+     * @return A list of all the countries in a region in descending order
+     */
+    public ArrayList<Country> getAllCountriesInRegion(String region) {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT country.Code, country.Name, country.Continent, country.Region, country.Population, country.Capital "
+                            + "FROM country "
+                            + "WHERE country.Region = '" +  region + "' "
+                            + "ORDER BY country.population DESC ";
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            ArrayList<Country> countries = new ArrayList<Country>();
+
+            while(rset.next())
+            {
+                // Extract country information
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                country.setPopulation(rset.getInt("country.Population"));
+                //Get the city by calling getCity() and passing the city id.
+                country.setCapitalCity(getCity(rset.getInt("country.Capital")));
+
+                //Add country to list
+                countries.add(country);
+            }
+            //return the countries
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get countries.");
+            return null;
+        }
+    }
+
     //------------------------------------- City queries -------------------------------------
     /**
      * Returns a city.

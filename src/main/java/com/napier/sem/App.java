@@ -127,7 +127,12 @@ public class App {
      */
     public void displayCountryReport(ArrayList<Country> countries)
     {
-
+        //Loops through every country
+        for(Country country : countries)
+        {
+            //Print the country report to console
+            System.out.println(country.toCountryReportString());
+        }
     }
 
     /**

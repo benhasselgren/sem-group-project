@@ -192,6 +192,6 @@ public class Country {
      * @return A string
      */
     public String toCountryReportString() {
-        return String.format("Code: %s, Name: %s, Continent: %s, Region: %s, Population: %d, Capital: %s");
+        return String.format("Code: %s, Name: %s, Continent: %s, Region: %s, Population: %d, Capital: %s", this.code, this.name, this.continent, this.region, this.population, this.capitalCity.getName());
     }
 }

@@ -170,20 +170,28 @@ public class Country {
     @Override
     public String toString() {
         return "Country{" +
-                "code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                ", continent='" + continent + '\'' +
-                ", region='" + region + '\'' +
-                ", surfaceArea=" + surfaceArea +
-                ", indepYear=" + indepYear +
-                ", population=" + population +
-                ", lifeExpectancy=" + lifeExpectancy +
-                ", gnp=" + gnp +
-                ", gnpold=" + gnpold +
-                ", localName='" + localName + '\'' +
-                ", governmentForm='" + governmentForm + '\'' +
-                ", headOfState='" + headOfState + '\'' +
-                ", capitalCity='" + capitalCity.getName() + '\'' +
+                "code='" + this.code + '\'' +
+                ", name='" + this.name + '\'' +
+                ", continent='" + this.continent + '\'' +
+                ", region='" + this.region + '\'' +
+                ", surfaceArea=" + this.surfaceArea +
+                ", indepYear=" + this.indepYear +
+                ", population=" + this.population +
+                ", lifeExpectancy=" + this.lifeExpectancy +
+                ", gnp=" + this.gnp +
+                ", gnpold=" + this.gnpold +
+                ", localName='" + this.localName + '\'' +
+                ", governmentForm='" + this.governmentForm + '\'' +
+                ", headOfState='" + this.headOfState + '\'' +
+                ", capitalCity='" + this.capitalCity.getName() + '\'' +
                 '}';
+    }
+
+    /**
+     * Creates a string for a country report.
+     * @return A string
+     */
+    public String toCountryReportString() {
+        return String.format("Code: %s, Name: %s, Continent: %s, Region: %s, Population: %d, Capital: %s");
     }
 }

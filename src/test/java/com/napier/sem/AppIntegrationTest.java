@@ -117,4 +117,14 @@ public class AppIntegrationTest
         //Check to see that the number of rows in query is correct
         assertEquals(7, countries.size());
     }
+
+    @Test
+    void testGetAllCountriesInRegionLimit()
+    {
+        //Get list of countries in Nordic Countries region
+        ArrayList<Country> countries = app.getAllCountriesInRegion("Nordic Countries", 2);
+
+        //Check to see that the number of rows in query is correct
+        assertEquals(2, countries.size());
+    }
 }

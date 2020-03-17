@@ -48,7 +48,12 @@ A request for statistics of populations on capital cities is sent to the employe
 
 ## SUB-VARIATIONS
 
-None.
+A capital city report requires the following columns:
+
+- Name
+- Country
+- District
+- Population
 
 ## SCHEDULE
 
